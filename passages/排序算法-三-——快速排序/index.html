@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="假设我们现在对“6  1  2 7  9  3  4  5 10  8”这个10个数进行排序。首先在这个序列中随便找一个数作为基准数（不要被这个名词吓到了，就是一个用来参照的数，待会你就知道它用来做啥的了）。为了方便，就让第一个数6作为基准数吧。接下来，需要将这个序列中所有比基准数大的数放在6的右边，比基准数小的数放在6的左边，类似下面这种排列。       3  1  2 5  4  6  9">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排序算法(三)——快速排序">
-<meta property="og:url" content="http://example.com/2021/03/06/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:url" content="http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="量子学院">
 <meta property="og:description" content="假设我们现在对“6  1  2 7  9  3  4  5 10  8”这个10个数进行排序。首先在这个序列中随便找一个数作为基准数（不要被这个名词吓到了，就是一个用来参照的数，待会你就知道它用来做啥的了）。为了方便，就让第一个数6作为基准数吧。接下来，需要将这个序列中所有比基准数大的数放在6的右边，比基准数小的数放在6的左边，类似下面这种排列。       3  1  2 5  4  6  9">
 <meta property="og:locale" content="zh_CN">
@@ -39,7 +39,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://snz04pap001files.storage.live.com/y4m8zVcZxMoDdLGZ-ilDF3lGZJB2dCfRDN2MBkCReD8oKKJF9ssw0H9ALQnQqt7DNwZ8tijOKMudNwICEH_AlCaTK6cSm21c-MVjeSHa1L2U3Fb_fuP5jrYEzVqGqOVd2i2fsR3aXL92Fh2x_ZnSZD823Wis7Xos4iZYqx6hS-KwgrhC2xKHOP7LC4NCa3vjeHD?width=670&height=231&cropmode=none">
 
-<link rel="canonical" href="http://example.com/2021/03/06/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
+<link rel="canonical" href="http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
 
 
 <script id="page-configurations">
@@ -186,10 +186,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/06/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/heike.jpeg">
       <meta itemprop="name" content="墨">
       <meta itemprop="description" content="">
     </span>
@@ -220,7 +220,7 @@
               </span>
 
           
-            <span id="/2021/03/06/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="post-meta-item leancloud_visitors" data-flag-title="排序算法(三)——快速排序" title="阅读次数">
+            <span id="/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="post-meta-item leancloud_visitors" data-flag-title="排序算法(三)——快速排序" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -235,8 +235,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/03/06/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/06/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" itemprop="commentCount"></span>
+    <a title="valine" href="/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -300,7 +300,7 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/02/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" rel="prev" title="排序算法(二)——冒泡排序">
+    <a href="/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/" rel="prev" title="排序算法(二)——冒泡排序">
       <i class="fa fa-chevron-left"></i> 排序算法(二)——冒泡排序
     </a></div>
       <div class="post-nav-item"></div>
@@ -368,6 +368,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="墨"
+      src="/images/heike.jpeg">
   <p class="site-author-name" itemprop="name">墨</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -435,7 +437,7 @@
 </div>
 
 <!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>-->
 
 <div class="powered-by">
@@ -472,7 +474,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 
 
 <script src="/js/next-boot.js"></script>

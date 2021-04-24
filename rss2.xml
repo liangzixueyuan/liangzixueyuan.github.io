@@ -9,13 +9,51 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 13 Mar 2021 05:17:25 GMT</pubDate>
+    <pubDate>Sat, 24 Apr 2021 02:25:48 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
+      <title>about</title>
+      <link>http://example.com/passages/about-1/</link>
+      <guid>http://example.com/passages/about-1/</guid>
+      <pubDate>Sat, 24 Apr 2021 02:25:48 GMT</pubDate>
+      
+      
+      
+      
+      
+      
+      <comments>http://example.com/passages/about-1/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>about</title>
+      <link>http://example.com/passages/about/</link>
+      <guid>http://example.com/passages/about/</guid>
+      <pubDate>Sat, 24 Apr 2021 02:25:19 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;hhhhhh&lt;/p&gt;
+</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>hhhhhh</p>]]></content:encoded>
+      
+      
+      
+      
+      <comments>http://example.com/passages/about/#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
       <title>排序算法(三)——快速排序</title>
-      <link>http://example.com/2021/03/06/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</link>
-      <guid>http://example.com/2021/03/06/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</guid>
+      <link>http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</link>
+      <guid>http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</guid>
       <pubDate>Sat, 06 Mar 2021 09:27:40 GMT</pubDate>
       
       <description>&lt;p&gt;假设我们现在对“6  1  2 7  9  3  4  5 10  8”这个10个数进行排序。首先在这个序列中随便找一个数作为基准数（不要被这个名词吓到了，就是一个用来参照的数，待会你就知道它用来做啥的了）。为了方便，就让第一个数6作为基准数吧。接下来，需要将这个序列中所有比基准数大的数放在6的右边，比基准数小的数放在6的左边，类似下面这种排列。&lt;br&gt;       3  1  2 5  4  6  9 7  10  8&lt;/p&gt;
@@ -30,14 +68,14 @@
       <category domain="http://example.com/tags/%E6%8E%92%E5%BA%8F/">排序</category>
       
       
-      <comments>http://example.com/2021/03/06/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/#disqus_thread</comments>
+      <comments>http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%89-%E2%80%94%E2%80%94%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>排序算法(二)——冒泡排序</title>
-      <link>http://example.com/2021/02/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</link>
-      <guid>http://example.com/2021/02/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
+      <link>http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</link>
+      <guid>http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</guid>
       <pubDate>Wed, 10 Feb 2021 01:02:36 GMT</pubDate>
       
       <description>&lt;h2 id=&quot;思想&quot;&gt;&lt;a href=&quot;#思想&quot; class=&quot;headerlink&quot; title=&quot;思想&quot;&gt;&lt;/a&gt;思想&lt;/h2&gt;&lt;p&gt;冒泡排序的基本思想是将数组中的每个相邻元素进行两两比较，按照小元素在前（或大元素在前）的原则确定是否进行交换。这样每一轮执行之后，最大（或最小）的元素就会被交换到了最后一位。&lt;/p&gt;
@@ -53,14 +91,14 @@
       <category domain="http://example.com/tags/%E6%8E%92%E5%BA%8F/">排序</category>
       
       
-      <comments>http://example.com/2021/02/10/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/#disqus_thread</comments>
+      <comments>http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>排序算法(一)——桶排序</title>
-      <link>http://example.com/2021/01/29/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%80-%E6%A1%B6%E6%8E%92%E5%BA%8F/</link>
-      <guid>http://example.com/2021/01/29/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%80-%E6%A1%B6%E6%8E%92%E5%BA%8F/</guid>
+      <link>http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%80-%E6%A1%B6%E6%8E%92%E5%BA%8F/</link>
+      <guid>http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%80-%E6%A1%B6%E6%8E%92%E5%BA%8F/</guid>
       <pubDate>Fri, 29 Jan 2021 09:53:43 GMT</pubDate>
       
       <description>&lt;p&gt;&lt;strong&gt;在学习程序设计的过程中，我们经常会需要进行排序。这次我们要一起学习一个最简单的排序方法——桶排序.&lt;/strong&gt;&lt;/p&gt;
@@ -77,14 +115,14 @@
       <category domain="http://example.com/tags/%E6%8E%92%E5%BA%8F/">排序</category>
       
       
-      <comments>http://example.com/2021/01/29/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%80-%E6%A1%B6%E6%8E%92%E5%BA%8F/#disqus_thread</comments>
+      <comments>http://example.com/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%B8%80-%E6%A1%B6%E6%8E%92%E5%BA%8F/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>快速幂</title>
-      <link>http://example.com/2021/01/27/%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
-      <guid>http://example.com/2021/01/27/%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <link>http://example.com/passages/%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <guid>http://example.com/passages/%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
       <pubDate>Wed, 27 Jan 2021 01:40:00 GMT</pubDate>
       
       <description>&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;快速幂&lt;/em&gt;&lt;/strong&gt;（Exponentiation by squaring，平方求幂）是一种简单而有效的小算法，它可以以 O(logn) 的时间复杂度计算乘方。快速幂不仅本身非常常见，而且后续很多算法也都会用到快速幂。&lt;/p&gt;
@@ -101,14 +139,14 @@
       <category domain="http://example.com/tags/cmath/">cmath</category>
       
       
-      <comments>http://example.com/2021/01/27/%E5%BF%AB%E9%80%9F%E5%B9%82/#disqus_thread</comments>
+      <comments>http://example.com/passages/%E5%BF%AB%E9%80%9F%E5%B9%82/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>走迷宫 (BFS)</title>
-      <link>http://example.com/2021/01/22/%E8%B5%B0%E8%BF%B7%E5%AE%AB-BFS/</link>
-      <guid>http://example.com/2021/01/22/%E8%B5%B0%E8%BF%B7%E5%AE%AB-BFS/</guid>
+      <link>http://example.com/passages/%E8%B5%B0%E8%BF%B7%E5%AE%AB-BFS/</link>
+      <guid>http://example.com/passages/%E8%B5%B0%E8%BF%B7%E5%AE%AB-BFS/</guid>
       <pubDate>Fri, 22 Jan 2021 00:31:34 GMT</pubDate>
       
       <description>&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;一个迷宫由 R 行 C 列格子组成，有的格子里有障碍物，不能走；有的格子是空地，可以走。&lt;br&gt;给定一个迷宫，求从左上角走到右下角最少需要走多少步（数据保证一定能走到）。只能在水平方向或垂直方向走，不能斜着走。&lt;/p&gt;
@@ -123,14 +161,14 @@
       <category domain="http://example.com/tags/bfs/">bfs</category>
       
       
-      <comments>http://example.com/2021/01/22/%E8%B5%B0%E8%BF%B7%E5%AE%AB-BFS/#disqus_thread</comments>
+      <comments>http://example.com/passages/%E8%B5%B0%E8%BF%B7%E5%AE%AB-BFS/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>八皇后问题</title>
-      <link>http://example.com/2021/01/21/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</link>
-      <guid>http://example.com/2021/01/21/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</guid>
+      <link>http://example.com/passages/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</link>
+      <guid>http://example.com/passages/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</guid>
       <pubDate>Thu, 21 Jan 2021 10:40:52 GMT</pubDate>
       
       <description>&lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;在国际象棋棋盘上放置八个皇后，要求每两个皇后之间不能直接吃掉对方。&lt;/p&gt;
@@ -147,14 +185,14 @@
       <category domain="http://example.com/tags/dfs/">dfs</category>
       
       
-      <comments>http://example.com/2021/01/21/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/#disqus_thread</comments>
+      <comments>http://example.com/passages/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>广度优先搜索 BFS</title>
-      <link>http://example.com/2021/01/20/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/</link>
-      <guid>http://example.com/2021/01/20/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/</guid>
+      <link>http://example.com/passages/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/</link>
+      <guid>http://example.com/passages/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/</guid>
       <pubDate>Wed, 20 Jan 2021 12:59:22 GMT</pubDate>
       
       <description>&lt;h1 id=&quot;概念&quot;&gt;&lt;a href=&quot;#概念&quot; class=&quot;headerlink&quot; title=&quot;概念&quot;&gt;&lt;/a&gt;概念&lt;/h1&gt;&lt;p&gt;广度优先搜索（Breadth-first-search），又称宽度优先搜索，简称 bfs，是图的搜索算法之一。与深度优先搜索不同的是，广度优先搜索会先搜索到与起始点距离较近的点，而深搜却是沿着一个分支递归到最后。&lt;/p&gt;
@@ -169,14 +207,14 @@
       <category domain="http://example.com/tags/bfs/">bfs</category>
       
       
-      <comments>http://example.com/2021/01/20/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/#disqus_thread</comments>
+      <comments>http://example.com/passages/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/#disqus_thread</comments>
       
     </item>
     
     <item>
       <title>搜索与回溯算法(DFS)</title>
-      <link>http://example.com/2021/01/18/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</link>
-      <guid>http://example.com/2021/01/18/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</guid>
+      <link>http://example.com/passages/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</link>
+      <guid>http://example.com/passages/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</guid>
       <pubDate>Mon, 18 Jan 2021 07:44:43 GMT</pubDate>
       
       <description>&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;搜索与回溯算法是计算机解题中的常用的算法&lt;br&gt;基本思想：&lt;/p&gt;
@@ -192,7 +230,7 @@
       <category domain="http://example.com/tags/dfs/">dfs</category>
       
       
-      <comments>http://example.com/2021/01/18/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/#disqus_thread</comments>
+      <comments>http://example.com/passages/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/#disqus_thread</comments>
       
     </item>
     

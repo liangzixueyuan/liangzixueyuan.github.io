@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="概念广度优先搜索（Breadth-first-search），又称宽度优先搜索，简称 bfs，是图的搜索算法之一。与深度优先搜索不同的是，广度优先搜索会先搜索到与起始点距离较近的点，而深搜却是沿着一个分支递归到最后。 举个栗子">
 <meta property="og:type" content="article">
 <meta property="og:title" content="广度优先搜索 BFS">
-<meta property="og:url" content="http://example.com/2021/01/20/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/index.html">
+<meta property="og:url" content="http://example.com/passages/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/index.html">
 <meta property="og:site_name" content="量子学院">
 <meta property="og:description" content="概念广度优先搜索（Breadth-first-search），又称宽度优先搜索，简称 bfs，是图的搜索算法之一。与深度优先搜索不同的是，广度优先搜索会先搜索到与起始点距离较近的点，而深搜却是沿着一个分支递归到最后。 举个栗子">
 <meta property="og:locale" content="zh_CN">
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://dm2304files.storage.live.com/y4mrkt17QeuRyBGwULZkqdfzW77Ex8w5_NUDMGBmwHBuHiE_GALJlMFDdLAXGKGu168fogNYk-fwk89g-KmR_fNEQVau1kqAK4OOvQ-_MZC6kpUy2ydefh0zJagPRc6MvTgKpWat3dZTJ2BNlLL1jJLDrFly_E549ID_QO1-c7JP4Wplu8T3fDjTEjZO_jj53zG?width=323&height=251&cropmode=none">
 
-<link rel="canonical" href="http://example.com/2021/01/20/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/">
+<link rel="canonical" href="http://example.com/passages/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/">
 
 
 <script id="page-configurations">
@@ -182,10 +182,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/01/20/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/passages/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/heike.jpeg">
       <meta itemprop="name" content="墨">
       <meta itemprop="description" content="">
     </span>
@@ -216,7 +216,7 @@
               </span>
 
           
-            <span id="/2021/01/20/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/" class="post-meta-item leancloud_visitors" data-flag-title="广度优先搜索 BFS" title="阅读次数">
+            <span id="/passages/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/" class="post-meta-item leancloud_visitors" data-flag-title="广度优先搜索 BFS" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -231,8 +231,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/01/20/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/01/20/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/" itemprop="commentCount"></span>
+    <a title="valine" href="/passages/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/passages/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -280,11 +280,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/01/18/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" rel="prev" title="搜索与回溯算法(DFS)">
+    <a href="/passages/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" rel="prev" title="搜索与回溯算法(DFS)">
       <i class="fa fa-chevron-left"></i> 搜索与回溯算法(DFS)
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/01/21/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" rel="next" title="八皇后问题">
+    <a href="/passages/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/" rel="next" title="八皇后问题">
       八皇后问题 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -352,6 +352,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="墨"
+      src="/images/heike.jpeg">
   <p class="site-author-name" itemprop="name">墨</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -419,7 +421,7 @@
 </div>
 
 <!--
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>-->
 
 <div class="powered-by">
@@ -456,7 +458,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/pisces.js"></script>
+<script src="/js/schemes/muse.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
