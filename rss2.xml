@@ -9,44 +9,28 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description></description>
-    <pubDate>Sat, 24 Apr 2021 02:25:48 GMT</pubDate>
+    <pubDate>Sat, 24 Apr 2021 04:04:05 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>about</title>
-      <link>http://example.com/passages/about-1/</link>
-      <guid>http://example.com/passages/about-1/</guid>
-      <pubDate>Sat, 24 Apr 2021 02:25:48 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>http://example.com/passages/about-1/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>about</title>
-      <link>http://example.com/passages/about/</link>
-      <guid>http://example.com/passages/about/</guid>
-      <pubDate>Sat, 24 Apr 2021 02:25:19 GMT</pubDate>
+      <title>find me</title>
+      <link>http://example.com/passages/find-me/</link>
+      <guid>http://example.com/passages/find-me/</guid>
+      <pubDate>Sat, 24 Apr 2021 03:59:33 GMT</pubDate>
       
         
         
-      <description>&lt;p&gt;hhhhhh&lt;/p&gt;
-</description>
+      <description>&lt;p&gt;GitHub :      &lt;a href=&quot;http://d.lzxy.ml/3&quot;&gt;http://d.lzxy.ml/3&lt;/a&gt;&lt;br&gt;哔哩哔哩 :     &lt;a href=&quot;http://d.lzxy.ml/4&quot;&gt;http://d.lzxy.ml/4&lt;/a&gt;&lt;br&gt;云盘</description>
         
       
       
       
-      <content:encoded><![CDATA[<p>hhhhhh</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>GitHub :      <a href="http://d.lzxy.ml/3">http://d.lzxy.ml/3</a><br>哔哩哔哩 :     <a href="http://d.lzxy.ml/4">http://d.lzxy.ml/4</a><br>云盘 :        <a href="http://d.lzxy.ml/5">http://d.lzxy.ml/5</a><br>OnlineJudge : <a href="http://d.lzxy.ml/8">http://d.lzxy.ml/8</a></p>]]></content:encoded>
       
       
       
       
-      <comments>http://example.com/passages/about/#disqus_thread</comments>
+      <comments>http://example.com/passages/find-me/#disqus_thread</comments>
       
     </item>
     

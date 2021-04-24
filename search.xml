@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>find me</title>
+    <url>/passages/find-me/</url>
+    <content><![CDATA[<p>GitHub :      <a href="http://d.lzxy.ml/3">http://d.lzxy.ml/3</a><br>哔哩哔哩 :     <a href="http://d.lzxy.ml/4">http://d.lzxy.ml/4</a><br>云盘 :        <a href="http://d.lzxy.ml/5">http://d.lzxy.ml/5</a><br>OnlineJudge : <a href="http://d.lzxy.ml/8">http://d.lzxy.ml/8</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>八皇后问题</title>
     <url>/passages/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在国际象棋棋盘上放置八个皇后，要求每两个皇后之间不能直接吃掉对方。</p>
@@ -15,6 +21,27 @@
 ]]></content>
       <tags>
         <tag>dfs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快速幂</title>
+    <url>/passages/%E5%BF%AB%E9%80%9F%E5%B9%82/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong><em>快速幂</em></strong>（Exponentiation by squaring，平方求幂）是一种简单而有效的小算法，它可以以 O(logn) 的时间复杂度计算乘方。快速幂不仅本身非常常见，而且后续很多算法也都会用到快速幂。</p>
+<h2 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h2><p>让我们先来思考一个问题：<strong>7的10次方，怎样算比较快？</strong></p>
+<p><strong>方法一</strong> 最朴素的想法, 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 = 282475249, 一步一步算，共进行了9次乘法。</p>
+<p>这样算无疑太慢了，尤其对计算机的CPU而言，每次运算只乘上一个个位数，无疑太屈才了。这时我们想到，也许可以拆分问题。</p>
+<a id="more"></a>
+
+<p><strong>方法二</strong> 把 7的10 次方拆分为 $7 ^ 5 * 7 ^ 5$ 所以先算 $7 ^ 5$,  $7 ^ 5$ 可以拆分为 $7 ^ 4 * 7$, 而 $7 ^ 4$ 又可像上面的一样算, 直到 $7 ^ 0 = 1$</p>
+<h2 id="总结归纳"><a href="#总结归纳" class="headerlink" title="总结归纳"></a>总结归纳</h2><p>刚刚我们用到的，无非是一个<strong>二分</strong>的思路。我们很自然地可以得到一个递归方程：<br><img src="https://dm2304files.storage.live.com/y4mw5S0KYhe9ym2HsZUMhGVAsPqA0rmSu15FhSYP71Yo5DJ_hpCRRAqkaJv4po6I0SdKmSr_e8JVIod-nX4bM7NsdSjk27haRcCTcqdahCuH-NmsuCi417Z6WW5ko3Uv3aLvk6itA37heV3-XE9mS5vZZf7XnZxTy40Xl-c-ARKa39ELR2xG2Gdslk_DzZGFZh8?width=531&height=142&cropmode=none" alt="avatar"></p>
+<p>计算a的n次方，如果n是偶数（不为0），那么就先计算a的n/2次方，然后平方；如果n是奇数，那么就先计算a的n-1次方，再乘上a；递归出口是a的0次方为1。</p>
+<p>递归快速幂的思路非常自然，代码也很简单（直接把递归方程翻译成代码即可）：</p>
+<h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// a 的 b 次方</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">func</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b)</span></span>&#123;   </span><br><span class="line">    <span class="keyword">if</span>(!b) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(b % <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> func(a, b - <span class="number">1</span>) * a;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = func(a, b / <span class="number">2</span>);</span><br><span class="line">        <span class="comment">// 一定要存一下要阻止他拆到最后, 要不然和方法一一样了</span></span><br><span class="line">        <span class="comment">// 这里就是这个算法的精髓</span></span><br><span class="line">        <span class="keyword">return</span> temp * temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> aa, bb;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; aa &gt;&gt; bb;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; func(aa, bb) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// a 的 b 次方 % n </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">func</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b, <span class="keyword">long</span> <span class="keyword">long</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (b % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> c = func(a, b / <span class="number">2</span>, n);</span><br><span class="line">        <span class="keyword">return</span> c * c % n;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a * func(a, b - <span class="number">1</span>, n) % n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> a, b, n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; func(a, b, n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>才疏学浅, 疏漏百出, 如有错误, 欢迎指出.</p>
+]]></content>
+      <tags>
+        <tag>cmath</tag>
       </tags>
   </entry>
   <entry>
@@ -53,47 +80,6 @@
 <h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1 2 4 4 5</span><br></pre></td></tr></table></figure>
 <h2 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h2><h3 id="普通版"><a href="#普通版" class="headerlink" title="普通版"></a>普通版</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> tong[<span class="number">100</span>], n, temp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">        tong[temp]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++)&#123;</span><br><span class="line">        <span class="keyword">while</span>(tong[i]--)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="升级版"><a href="#升级版" class="headerlink" title="升级版"></a><strong><em>升级版</em></strong></h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> tong[<span class="number">1000</span>], n, temp, mmax, mmin = <span class="number">0xff</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">        tong[temp]++;</span><br><span class="line">        mmax = max(temp, mmax);</span><br><span class="line">        mmin = min(temp, mmin);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = mmin; i &lt;= mmax; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(!n) <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">while</span>(tong[i]--)&#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            n--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>才疏学浅, 疏漏百出, 如有错误, 欢迎指出.</p>
-]]></content>
-      <tags>
-        <tag>排序</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快速幂</title>
-    <url>/passages/%E5%BF%AB%E9%80%9F%E5%B9%82/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong><em>快速幂</em></strong>（Exponentiation by squaring，平方求幂）是一种简单而有效的小算法，它可以以 O(logn) 的时间复杂度计算乘方。快速幂不仅本身非常常见，而且后续很多算法也都会用到快速幂。</p>
-<h2 id="举个例子"><a href="#举个例子" class="headerlink" title="举个例子"></a>举个例子</h2><p>让我们先来思考一个问题：<strong>7的10次方，怎样算比较快？</strong></p>
-<p><strong>方法一</strong> 最朴素的想法, 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 × 7 = 282475249, 一步一步算，共进行了9次乘法。</p>
-<p>这样算无疑太慢了，尤其对计算机的CPU而言，每次运算只乘上一个个位数，无疑太屈才了。这时我们想到，也许可以拆分问题。</p>
-<a id="more"></a>
-
-<p><strong>方法二</strong> 把 7的10 次方拆分为 $7 ^ 5 * 7 ^ 5$ 所以先算 $7 ^ 5$,  $7 ^ 5$ 可以拆分为 $7 ^ 4 * 7$, 而 $7 ^ 4$ 又可像上面的一样算, 直到 $7 ^ 0 = 1$</p>
-<h2 id="总结归纳"><a href="#总结归纳" class="headerlink" title="总结归纳"></a>总结归纳</h2><p>刚刚我们用到的，无非是一个<strong>二分</strong>的思路。我们很自然地可以得到一个递归方程：<br><img src="https://dm2304files.storage.live.com/y4mw5S0KYhe9ym2HsZUMhGVAsPqA0rmSu15FhSYP71Yo5DJ_hpCRRAqkaJv4po6I0SdKmSr_e8JVIod-nX4bM7NsdSjk27haRcCTcqdahCuH-NmsuCi417Z6WW5ko3Uv3aLvk6itA37heV3-XE9mS5vZZf7XnZxTy40Xl-c-ARKa39ELR2xG2Gdslk_DzZGFZh8?width=531&height=142&cropmode=none" alt="avatar"></p>
-<p>计算a的n次方，如果n是偶数（不为0），那么就先计算a的n/2次方，然后平方；如果n是奇数，那么就先计算a的n-1次方，再乘上a；递归出口是a的0次方为1。</p>
-<p>递归快速幂的思路非常自然，代码也很简单（直接把递归方程翻译成代码即可）：</p>
-<h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// a 的 b 次方</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">func</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b)</span></span>&#123;   </span><br><span class="line">    <span class="keyword">if</span>(!b) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(b % <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">return</span> func(a, b - <span class="number">1</span>) * a;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = func(a, b / <span class="number">2</span>);</span><br><span class="line">        <span class="comment">// 一定要存一下要阻止他拆到最后, 要不然和方法一一样了</span></span><br><span class="line">        <span class="comment">// 这里就是这个算法的精髓</span></span><br><span class="line">        <span class="keyword">return</span> temp * temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> aa, bb;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; aa &gt;&gt; bb;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; func(aa, bb) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// a 的 b 次方 % n </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">func</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b, <span class="keyword">long</span> <span class="keyword">long</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (b % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> c = func(a, b / <span class="number">2</span>, n);</span><br><span class="line">        <span class="keyword">return</span> c * c % n;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> a * func(a, b - <span class="number">1</span>, n) % n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> a, b, n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; func(a, b, n) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>才疏学浅, 疏漏百出, 如有错误, 欢迎指出.</p>
-]]></content>
-      <tags>
-        <tag>cmath</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序算法(二)——冒泡排序</title>
-    <url>/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>冒泡排序的基本思想是将数组中的每个相邻元素进行两两比较，按照小元素在前（或大元素在前）的原则确定是否进行交换。这样每一轮执行之后，最大（或最小）的元素就会被交换到了最后一位。</p>
-<p>完成一轮之后，我们可以再从头进行第二轮的比较，直到倒数第二位（因为最后一位已经是被排序好的了）时结束。这样一轮之后，第二大（或第二小）的元素就会被交换到了倒数第二位。</p>
-<p>同样的过程会依次进行，直到所有元素都被排列成预期的顺序为止。这个过程是不是很像是水中的起泡一个个冒起来的过程呢？</p>
-<a id="more"></a>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>如果在 C/C++ 语言中去实现冒泡排序，我们最常见的就是两层for循环的实现方式。如果我们有 55 个数待排序，我们可以会在程序中写出这样的片段：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">4</span> - j; i++) &#123;</span><br><span class="line">        swap(a[i], a[i + <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这其中，i和j都是用于作为数组索引的变量，swap是一个交换值的函数。</p>
-<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><iframe height=550px width=100% src="//player.bilibili.com/player.html?aid=929007067&bvid=BV1NT4y1N7xg&cid=295678852&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num[<span class="number">500</span>], n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="comment">//int flag = 0; </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(num[j] &gt; num[j + <span class="number">1</span>]) &#123;</span><br><span class="line">				swap(num[j], num[j + <span class="number">1</span>]);</span><br><span class="line">				<span class="comment">//flag = 1;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//if(!flag) break;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>其中注释的部分是一个小优化, 大家可以想一想这是为什么</p>
 <p>才疏学浅, 疏漏百出, 如有错误, 欢迎指出.</p>
 ]]></content>
       <tags>
@@ -140,6 +126,26 @@
       </tags>
   </entry>
   <entry>
+    <title>排序算法(二)——冒泡排序</title>
+    <url>/passages/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95-%E4%BA%8C-%E2%80%94%E2%80%94%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h2 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h2><p>冒泡排序的基本思想是将数组中的每个相邻元素进行两两比较，按照小元素在前（或大元素在前）的原则确定是否进行交换。这样每一轮执行之后，最大（或最小）的元素就会被交换到了最后一位。</p>
+<p>完成一轮之后，我们可以再从头进行第二轮的比较，直到倒数第二位（因为最后一位已经是被排序好的了）时结束。这样一轮之后，第二大（或第二小）的元素就会被交换到了倒数第二位。</p>
+<p>同样的过程会依次进行，直到所有元素都被排列成预期的顺序为止。这个过程是不是很像是水中的起泡一个个冒起来的过程呢？</p>
+<a id="more"></a>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>如果在 C/C++ 语言中去实现冒泡排序，我们最常见的就是两层for循环的实现方式。如果我们有 55 个数待排序，我们可以会在程序中写出这样的片段：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">5</span>; j++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">4</span> - j; i++) &#123;</span><br><span class="line">        swap(a[i], a[i + <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这其中，i和j都是用于作为数组索引的变量，swap是一个交换值的函数。</p>
+<h2 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h2><iframe height=550px width=100% src="//player.bilibili.com/player.html?aid=929007067&bvid=BV1NT4y1N7xg&cid=295678852&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<h2 id="上代码"><a href="#上代码" class="headerlink" title="上代码"></a>上代码</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> num[<span class="number">500</span>], n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">		<span class="comment">//int flag = 0; </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span>(num[j] &gt; num[j + <span class="number">1</span>]) &#123;</span><br><span class="line">				swap(num[j], num[j + <span class="number">1</span>]);</span><br><span class="line">				<span class="comment">//flag = 1;</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//if(!flag) break;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中注释的部分是一个小优化, 大家可以想一想这是为什么</p>
+<p>才疏学浅, 疏漏百出, 如有错误, 欢迎指出.</p>
+]]></content>
+      <tags>
+        <tag>排序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搜索与回溯算法(DFS)</title>
     <url>/passages/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>搜索与回溯算法是计算机解题中的常用的算法<br>基本思想：</p>
@@ -172,16 +178,5 @@
       <tags>
         <tag>bfs</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>about</title>
-    <url>/passages/about-1/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>about</title>
-    <url>/passages/about/</url>
-    <content><![CDATA[<p>hhhhhh</p>
-]]></content>
   </entry>
 </search>
